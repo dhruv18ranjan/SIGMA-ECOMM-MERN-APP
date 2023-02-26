@@ -84,7 +84,7 @@ const Register = () => {
     }
 
     try{
-      const res= await axios.post("http://localhost:5000/api/auth/register",obj)
+      const res= await axios.post("https://sigma-mern-app.onrender.com/api/auth/register",obj)
       navigate("/login")
     }
     catch(err){
