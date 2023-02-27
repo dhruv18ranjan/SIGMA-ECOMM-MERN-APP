@@ -79,6 +79,10 @@ const Login = () => {
   const {isFetching,error}=useSelector((state)=>state.user);
   const navigate=useNavigate();
   
+  const handleClicks=()=>{
+    navigate("/register");
+  }
+
   const handleClick=async(e)=>{
     e.preventDefault();
 
@@ -95,8 +99,7 @@ const Login = () => {
           <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
           <Button onClick={handleClick} disabled={isFetching} >LOGIN</Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link>FORGOT PASSWORD?</Link>
-          <Link>CREATE NEW ACCOUNT</Link>
+          <Link onClick={handleClicks} to="/register">CREATE NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>
